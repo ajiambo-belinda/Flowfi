@@ -5,7 +5,7 @@ export default function Sidebar({ c, view, setView, sidebarOpen, setSidebarOpen 
   return (
     <>
       <aside
-        className={`fixed lg:static z-30 h-full w-64 p-5 flex flex-col justify-between transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+        className={`absolute lg:static z-30 h-full w-64 p-5 flex flex-col justify-between transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
         style={{ background: c.surface, borderRight: `1px solid ${c.border}` }}
       >
         <div>
@@ -49,7 +49,7 @@ export default function Sidebar({ c, view, setView, sidebarOpen, setSidebarOpen 
         </div>
       </aside>
 
-      {sidebarOpen && <div className="fixed inset-0 bg-black/50 z-20 lg:hidden" onClick={() => setSidebarOpen(false)} />}
+      {sidebarOpen && <div className="absolute inset-0 bg-black/50 z-20 lg:hidden" onClick={() => setSidebarOpen(false)} />}
     </>
   );
 }

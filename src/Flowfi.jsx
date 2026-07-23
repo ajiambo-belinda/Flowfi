@@ -48,29 +48,42 @@ export default function FlowFi() {
   });
 
   return (
-    <div className="min-h-screen w-full flex font-sans" style={{ background: c.bg, color: c.text }}>
-      <Sidebar c={c} view={view} setView={setView} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+    <div
+      className="min-h-screen w-full flex items-center justify-center p-3 sm:p-6 lg:p-10 font-sans"
+      style={{ background: dark ? "#05070d" : "#dbe3ee" }}
+    >
+      <div
+        className="relative w-full max-w-[1440px] h-[92vh] min-h-[600px] flex rounded-3xl overflow-hidden"
+        style={{
+          background: c.bg,
+          color: c.text,
+          border: `1px solid ${c.border}`,
+          boxShadow: "0 40px 90px -25px rgba(0,0,0,0.55)",
+        }}
+      >
+        <Sidebar c={c} view={view} setView={setView} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      <div className="flex-1 flex flex-col min-w-0">
-        <TopBar c={c} view={view} dark={dark} setDark={setDark} currency={currency} setCurrency={setCurrency} setSidebarOpen={setSidebarOpen} />
+        <div className="flex-1 flex flex-col min-w-0">
+          <TopBar c={c} view={view} dark={dark} setDark={setDark} currency={currency} setCurrency={setCurrency} setSidebarOpen={setSidebarOpen} />
 
-        <main className="flex-1 p-3 sm:p-5 lg:p-8 space-y-4 sm:space-y-6">
-          {view === "dashboard" && (
-            <DashboardView c={c} money={money} totalIncome={totalIncome} totalExpenses={totalExpenses}
-              balance={balance} savings={savings} budgetRemaining={budgetRemaining}
-              categorySpend={categorySpend} highestCategory={highestCategory} spendDelta={spendDelta}
-              overBudgetCategories={overBudgetCategories} />
-          )}
-          {view === "transactions" && (
-            <TransactionsView c={c} money={money} transactions={transactions} setTransactions={setTransactions} />
-          )}
-          {view === "budgets" && <BudgetsView c={c} money={money} transactions={transactions} />}
-          {view === "goals" && <GoalsView c={c} money={money} goals={goals} setGoals={setGoals} />}
-          {view === "reports" && (
-            <ReportsView c={c} money={money} categorySpend={categorySpend} highestCategory={highestCategory} spendDelta={spendDelta} />
-          )}
-          {view === "settings" && <SettingsView c={c} currency={currency} setCurrency={setCurrency} dark={dark} setDark={setDark} />}
-        </main>
+          <main className="flex-1 overflow-y-auto p-3 sm:p-5 lg:p-8 space-y-4 sm:space-y-6">
+            {view === "dashboard" && (
+              <DashboardView c={c} money={money} totalIncome={totalIncome} totalExpenses={totalExpenses}
+                balance={balance} savings={savings} budgetRemaining={budgetRemaining}
+                categorySpend={categorySpend} highestCategory={highestCategory} spendDelta={spendDelta}
+                overBudgetCategories={overBudgetCategories} />
+            )}
+            {view === "transactions" && (
+              <TransactionsView c={c} money={money} transactions={transactions} setTransactions={setTransactions} />
+            )}
+            {view === "budgets" && <BudgetsView c={c} money={money} transactions={transactions} />}
+            {view === "goals" && <GoalsView c={c} money={money} goals={goals} setGoals={setGoals} />}
+            {view === "reports" && (
+              <ReportsView c={c} money={money} categorySpend={categorySpend} highestCategory={highestCategory} spendDelta={spendDelta} />
+            )}
+            {view === "settings" && <SettingsView c={c} currency={currency} setCurrency={setCurrency} dark={dark} setDark={setDark} />}
+          </main>
+        </div>
       </div>
     </div>
   );

@@ -1,24 +1,23 @@
-export const CATEGORIES = ["Food", "Transport", "Rent", "Shopping", "Entertainment", "Healthcare"];
+export const CATEGORIES = ["Food", "Transport", "Housing", "Shopping", "Entertainment", "Healthcare", "Savings", "Education", "Subscriptions", "Other"];
 
 export const CATEGORY_COLORS = {
-  Food: "#3B82F6",          
-  Transport: "#10B981",    
-  Housing: "#F59E0B",       
-  Shopping: "#EF4444",      
-  Entertainment: "#8B5CF6", 
-  Healthcare: "#06B6D4",    
-  Savings: "#14B8A6",       
-  Education: "#6366F1",     
-  Subscriptions: "#EC4899", 
-  Other: "#6B7280",         
+  Food: "#3B82F6",
+  Transport: "#10B981",
+  Housing: "#F59E0B",
+  Shopping: "#EF4444",
+  Entertainment: "#8B5CF6",
+  Healthcare: "#06B6D4",
+  Savings: "#14B8A6",
+  Education: "#6366F1",
+  Subscriptions: "#EC4899",
+  Other: "#6B7280",
 };
-
 
 export const INITIAL_TRANSACTIONS = [
   { id: 1, date: "2026-07-20", description: "Naivas Supermarket", category: "Food", amount: 4200, type: "expense" },
   { id: 2, date: "2026-07-19", description: "Uber rides", category: "Transport", amount: 1350, type: "expense" },
   { id: 3, date: "2026-07-18", description: "Monthly salary", category: "Income", amount: 145000, type: "income" },
-  { id: 4, date: "2026-07-17", description: "Westlands apartment", category: "Rent", amount: 35000, type: "expense" },
+  { id: 4, date: "2026-07-17", description: "Westlands apartment", category: "Housing", amount: 35000, type: "expense" },
   { id: 5, date: "2026-07-16", description: "Java House", category: "Food", amount: 1650, type: "expense" },
   { id: 6, date: "2026-07-15", description: "Netflix subscription", category: "Entertainment", amount: 1100, type: "expense" },
   { id: 7, date: "2026-07-14", description: "Zara - new jacket", category: "Shopping", amount: 6800, type: "expense" },
@@ -38,10 +37,10 @@ export const BUDGETS = [
   { category: "Shopping", budget: 10000 },
   { category: "Entertainment", budget: 5000 },
   { category: "Healthcare", budget: 6000 },
-  { category: "Savings", budget: 10000},
-  { category: "Education", budget: 12000},
+  { category: "Savings", budget: 10000 },
+  { category: "Education", budget: 12000 },
   { category: "Subscriptions", budget: 8000 },
-  { category: "Other", bugdet: 10000}
+  { category: "Other", budget: 10000 },
 ];
 
 export const TREND_DATA = [
